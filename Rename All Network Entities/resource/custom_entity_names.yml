@@ -1,0 +1,4 @@
+vpc: 'vpc'
+route_tables: 'router'
+internet_gateways: 'internet_gateway'
+dhcp_options_sets: 'dhcpoptions_sets'

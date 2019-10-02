@@ -1,4 +1,4 @@
-cluster_ip: ""
+cluster_ip: "192.168.101.100"
 verify_ssl: False
 
 # Domain and username are optional, only to be used as default values when running the script
@@ -8,9 +8,4 @@ domain: "cloud_admin"
 username: "admin"
 project: "default"  # should stay as default
 
-entity_names:
-  vpc: 'vpc'
-  route_tables: 'router'
-  internet_gateways: 'internet_gateway'
-  dhcp_options_sets: 'dhcpoptions_sets'
 cert_file:
