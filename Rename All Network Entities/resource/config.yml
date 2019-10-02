@@ -8,4 +8,9 @@ domain: "cloud_admin"
 username: "admin"
 project: "default"  # should stay as default
 
+entity_names:
+  vpc: 'vpc'
+  route_tables: 'router'
+  internet_gateways: 'internet_gateway'
+  dhcp_options_sets: 'dhcpoptions_sets'
 cert_file:

@@ -3,10 +3,9 @@
 """Script to rename network entities to a defined convention"""
 import sys
 import os
-import getpass
 import yaml
 import requests
-import symphony_client
+from resource.symp_client import create_symp_client
 
 
 def clear():
@@ -22,7 +21,7 @@ def load_config():
     If found, returns config file as YAML"""
     root_path = os.path.dirname(os.path.abspath(__file__))
     try:
-        with open("{}/config.yml".format(root_path)) as config_file:
+        with open("{}/resource/config.yml".format(root_path)) as config_file:
             try:
                 config = yaml.safe_load(config_file)
             except yaml.YAMLError as yaml_exception:
@@ -80,37 +79,6 @@ def set_format():
     else:
         user_format = '{0}_{1}_{2}'
     return  user_format
-
-
-def create_symp_client():
-    """Create a symphony client and log in to the cluster
-
-    :return client: A Symphony Client Session"""
-
-    session = requests.Session()
-    session.trust_env = False
-
-    if not CONFIG['verify_ssl']:
-        session.verify = False
-    elif CONFIG['cert_file'] is not None:
-        session.cert = CONFIG['cert_file']
-
-    client = symphony_client.Client(url='https://{}'.format(CONFIG['cluster_ip_address']),
-                                    session=session)
-    domain = CONFIG['domain']
-    username = CONFIG['username']
-    domain_temp = raw_input('Domain [{}]:\n> '.format(domain))
-    username_temp = raw_input('Username [{}]:\n> '.format(username))
-    if domain_temp:
-        domain = domain_temp
-    if username_temp:
-        username = username_temp
-    password = getpass.getpass('Password:\n> ')
-    client.login(domain=domain,
-                 username=username,
-                 passwordd=password,
-                 project=CONFIG['project'])
-    return client
 
 
 def rename_net(data, entity_type, client):
