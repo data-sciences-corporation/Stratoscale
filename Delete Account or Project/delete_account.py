@@ -83,6 +83,8 @@ def main():
                 sys.exit()
     start_time = time.time()
     delete_account(all_account_data[selected_account][id_position], client)
+    end_time = time.time()
+    print 'Complete.\nRuntime was {} seconds'.format(end_time - start_time)
 
 
 if __name__ == '__main__':
