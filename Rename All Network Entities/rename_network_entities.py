@@ -1,10 +1,12 @@
 #!/usr/bin/env python
 # coding: utf-8
 """Script to rename network entities to a defined convention"""
-import sys
 import os
-import yaml
+import sys
+
 import requests
+import yaml
+from time import time
 from resource.symp_client import create_symp_client
 
 
@@ -17,7 +19,7 @@ def clear():
 
 
 def load_config():
-    """Checks for existance of config file. If an error occurs, program exits.
+    """Checks for existence of config file. If an error occurs, program exits.
     If found, returns config file as YAML"""
     root_path = os.path.dirname(os.path.abspath(__file__))
     try:
@@ -57,7 +59,7 @@ def set_format():
                                "> ")
         try:
             new_format = int(new_format)
-            if 0 < user_format < 7:
+            if 0 < new_format < 7:
                 valid = True
         except ValueError as value_error:
             print('Invalid Input.\nError: {}'.format(value_error))
@@ -78,7 +80,7 @@ def set_format():
             user_format = '{2}_{1}_{0}'
     else:
         user_format = '{0}_{1}_{2}'
-    return  user_format
+    return user_format
 
 
 def rename_net(data, entity_type, client):
@@ -214,7 +216,7 @@ def select_task(client):
         gw_data = client.vpcs.internet_gateways.list()
         rename_net(gw_data, GATEWAY, client)
     elif chosen == 5:
-        dhcp_data == client.vpcs.dhcp_options.list()
+        dhcp_data = client.vpcs.dhcp_options.list()
         rename_net(dhcp_data, DHCP, client)
     else:
         print('Invalid Input')
@@ -227,7 +229,10 @@ def select_task(client):
 def main():
     clear()
     client = create_symp_client()
+    start_time = time()
     select_task(client)
+    end_time = time()
+    print('\nTotal Runtime: {} seconds'.format(end_time - start_time))
 
 
 CONFIG = load_config()
