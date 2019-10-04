@@ -1,0 +1,11 @@
+region_access:
+  regionname: 'dscstrato'
+  ipaddress: '192.168.101.100'
+  cloud_admin_password: 'R@ck@tt@ck-123'
+  cloud_domain: 'engineering'
+  cloud_user: 'richardraymond'
+  cloud_password: 'M!ch3ll3_90'
+  project: 'rr'
+purestoragearray:
+  ipaddress: '172.16.100.10'
+  apitoken: 'e0835679-2827-7f95-b55f-e7793c7d8eed'
