@@ -17,10 +17,11 @@ Repository for scripts designed around Stratoscale's on-prem dev-ops/cloud/autom
 ********************************************************************************************************
                                           INSTALLING THE SYMP CLIENT
 ********************************************************************************************************
-1. Run the following command:
-
+Pull the client from a Stratoscale region and push it to your Python installation:
+```
   sudo URL=https://<cluster_ip> bash -c "$(curl -k -sSL https://<cluster_ip>/install-client.sh)"
-
-In order to use the client:
-
+```
+Export the client when running scripts that use it:
+```
   export PYTHONPATH=/opt/symphony-client
+```
