@@ -22,6 +22,6 @@ Pull the client from a Stratoscale region and push it to your Python installatio
   sudo URL=https://<cluster_ip> bash -c "$(curl -k -sSL https://<cluster_ip>/install-client.sh)"
 ```
 Export the client when running scripts that use it:
-```shell
+```bash
   export PYTHONPATH=/opt/symphony-client
 ```
