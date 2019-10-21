@@ -13,10 +13,7 @@
 
 # Stratoscale
 Repository for scripts designed around Stratoscale's on-prem dev-ops/cloud/automation platform.
-
-********************************************************************************************************
                                           INSTALLING THE SYMP CLIENT
-********************************************************************************************************
 Pull the client from a Stratoscale region and push it to your Python installation:
 ```
   sudo URL=https://<cluster_ip> bash -c "$(curl -k -sSL https://<cluster_ip>/install-client.sh)"
