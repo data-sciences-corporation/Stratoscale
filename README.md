@@ -18,10 +18,10 @@ Repository for scripts designed around Stratoscale's on-prem dev-ops/cloud/autom
 The Symp Client is required, when communicating to Stratoscale's own API. (Where possible, rather use the standard AWS calls, for max cloud compatibility).
 
 Pull the client from a Stratoscale region and push it to your Python installation:
-```
+```bash
   sudo URL=https://<cluster_ip> bash -c "$(curl -k -sSL https://<cluster_ip>/install-client.sh)"
 ```
 Export the client when running scripts that use it:
-```
+```shell
   export PYTHONPATH=/opt/symphony-client
 ```
