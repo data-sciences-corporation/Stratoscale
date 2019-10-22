@@ -25,3 +25,4 @@ Export the client when running scripts that use it:
 ```bash
   export PYTHONPATH=/opt/symphony-client
 ```
+Please note that this export is not permanent and should be run only when using the Symp client as it may cause errors with other Python related functions, such as 'pip install'.
