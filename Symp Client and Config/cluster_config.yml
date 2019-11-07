@@ -1,0 +1,11 @@
+cluster_ip: ""
+verify_ssl: False
+
+# Domain and username are optional, only to be used as default values when running the script
+# User will be prompted for details
+# // Should be an admin account //
+domain: "cloud_admin"
+username: "admin"
+project: "default"  # should stay as default
+
+cert_file:
