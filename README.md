@@ -11,7 +11,7 @@
 
 
 
-# Data Sciences Corporation's Straoscale script repository
+# Data Sciences Corporation's Stratoscale script repository
 Repository for scripts designed around Stratoscale's on-prem dev-ops/cloud/automation platform.
 
 ## Symp Client (Installation)
